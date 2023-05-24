@@ -1,3 +1,4 @@
+local zen = require("zen-mode")
 -- Mapping data with "desc" stored directly by vim.keymap.set().
 --
 -- Please use this mappings table to set keyboard mapping since this is the
@@ -18,6 +19,12 @@ return {
     -- tables with the `name` key will be registered with which-key if it's installed
     -- this is useful for naming menus
     ["<leader>b"] = { name = "Buffers" },
+    ["<leader>h"] = { name = "Harpoon" },
+    ["<leader>ho"] = { require("harpoon.ui").toggle_quick_menu, desc = "Harpoon menu" },
+    ["<leader>hm"] = { require("harpoon.mark").add_file, desc = "Harpoon mark" },
+    ["<C-l>"] = { require("harpoon.ui").nav_next, desc = "Harpoon mark" },
+    ["<C-h>"] = { require("harpoon.ui").nav_prev, desc = "Harpoon mark" },
+    ["<leader>z"] = { zen.toggle, desc = "Toggle zen mode" },
     -- quick save
     -- ["<C-s>"] = { ":w!<cr>", desc = "Save File" },  -- change description but the same command
   },
